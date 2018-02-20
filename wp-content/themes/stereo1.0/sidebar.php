@@ -31,9 +31,9 @@ $sidebar = publishable_lite_custom_sidebar(); ?>
 					<h3><?php _e('Meta', 'publishable-mag') ?></h3>
 					<div class="widget-wrap">
 						<ul>
-							<?php wp_register(); ?>
-							<li><?php wp_loginout(); ?></li>
-							<?php wp_meta(); ?>
+							<?php //wp_register(); ?>
+							<li><?php// wp_loginout(); ?></li>
+							<?php //wp_meta(); ?>
 						</ul>
 					</div>
 				</div>

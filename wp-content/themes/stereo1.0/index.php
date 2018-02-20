@@ -13,7 +13,7 @@
 				while ( have_posts() ) : the_post();
 					publishable_lite_archive_post();
 				endwhile;
-				publishable_lite_post_navigation();
+					publishable_lite_post_navigation();
 			endif; ?>
 		</div><!-- .article -->
 		<?php get_sidebar(); ?>

@@ -54,12 +54,12 @@
 			<div class="primary-navigation">
 				<a href="#" id="pull" class="toggle-mobile-menu"><?php _e('Menu', 'publishable-mag'); ?></a>
 				<div class="container clear">
-					<nav id="navigation" class="primary-navigation mobile-menu-wrapper" role="navigation">
+					<nav id="navigation-principale" class="primary-navigation mobile-menu-wrapper" role="navigation">
 						<?php if ( has_nav_menu( 'primary' ) ) { ?>
 							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'menu clearfix', 'container' => '' ) ); ?>
 						<?php } else { ?>
 							<ul class="menu clearfix">
-								<?php wp_list_categories('title_li='); ?>
+							<?php wp_list_pages("depth=1&title_li="); ?>
 							</ul>
 						<?php } ?>
 					</nav><!-- #site-navigation -->

@@ -19,11 +19,11 @@ get_header(); ?>
 	    <?php if($publishable_lite_single_breadcrumb_section == '1') { ?>
 							<div class="breadcrumb" xmlns:v="http://rdf.data-vocabulary.org/#"><?php publishable_lite_the_breadcrumb(); ?></div>
 						<?php } ?>
-		<article class="article">		
+		<article class="article">
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 				<div id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
 					<div class="single_post">
-				
+
 						<header>
 											    <div class="post-date-publishable"><?php the_time( get_option( 'date_format' ) ); ?></div>
 
@@ -41,21 +41,21 @@ get_header(); ?>
 								<!-- End Tags -->
 							<?php } ?>
 						</div><!-- End Content -->
-						<?php if($publishable_lite_relatedposts_section == '1') { ?>	
+						<?php if($publishable_lite_relatedposts_section == '1') { ?>
 						    <!-- Start Related Posts -->
-							<?php $categories = get_the_category($post->ID); 
-							if ($categories) { $category_ids = array(); 
-								foreach($categories as $individual_category) 
-									$category_ids[] = $individual_category->term_id; 
-								    $args=array( 'category__in' => $category_ids, 
-								    'post__not_in' => array($post->ID), 
-								    'ignore_sticky_posts' => 1, 
+							<?php $categories = get_the_category($post->ID);
+							if ($categories) { $category_ids = array();
+								foreach($categories as $individual_category)
+									$category_ids[] = $individual_category->term_id;
+								    $args=array( 'category__in' => $category_ids,
+								    'post__not_in' => array($post->ID),
+								    'ignore_sticky_posts' => 1,
 								    'showposts'=> 3,
 								    'orderby' => 'rand' );
 									$my_query = new wp_query( $args ); if( $my_query->have_posts() ) {
 								echo '<div class="related-posts"><div class="postauthor-top"><h3>'.__('Related Posts', 'publishable-mag').'</h3></div>';
-								$pexcerpt=1; $j = 0; $counter = 0; 
-								while( $my_query->have_posts() ) { 
+								$pexcerpt=1; $j = 0; $counter = 0;
+								while( $my_query->have_posts() ) {
 								$my_query->the_post();?>
 								<article class="post excerpt  <?php echo (++$j % 3== 0) ? 'last' : ''; ?>">
 									<?php if ( has_post_thumbnail() ) { ?>
@@ -70,7 +70,7 @@ get_header(); ?>
 										</a>
 									<?php } else { ?>
 										<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" id="featured-thumbnail">
-										
+
 											<header>
 												<h4 class="title front-view-title"><?php the_title(); ?></h4>
 											</header>
@@ -80,7 +80,7 @@ get_header(); ?>
 								<?php $pexcerpt++;?>
 								<?php } echo '</div>'; }} wp_reset_postdata(); ?>
 							<!-- End Related Posts -->
-						<?php }?>  
+						<?php }?>
 						<?php if($publishable_lite_authorbox_section == '1') { ?>
 							<!-- Start Author Box -->
 							<div class="postauthor">
@@ -90,7 +90,7 @@ get_header(); ?>
 								<p><?php the_author_meta('description') ?></p>
 							</div>
 							<!-- End Author Box -->
-						<?php }?>  
+						<?php }?>
 						<?php comments_template( '', true ); ?>
 					</div>
 				</div>

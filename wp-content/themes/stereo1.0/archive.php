@@ -19,7 +19,7 @@
 	<div id="content" class="article">
 		<h1 class="postsby">
 			<span><?php the_archive_title(); ?></span>
-		</h1>	
+		</h1>
 		<?php if ( have_posts() ) :
 			$publishable_lite_full_posts = get_theme_mod('publishable_lite_full_posts');
 			while ( have_posts() ) : the_post();
