@@ -1,11 +1,15 @@
-<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-	<div class="sidebar-module sidebar-module-inset">
-		<h4>À Propos</h4>
-		<p><?php the_author_meta( 'description' ); ?> </p>
-
-		<h4>Archives</h4>
-		<ol class="list-unstyled">
-			<?php wp_get_archives( 'type=monthly' ); ?>
-		</ol>
+<div class="sidebar">
+	<div class="container text-center sidebar-module sidebar-module-inset">
+	<h4>Categories</h4>
+		<ul class="list-unstyled">
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+			<?php wp_list_cats('sort_column=name&optioncount=1&hierarchical=1'); ?>
+		</ul>
+	<h4>Archives</h4>
+		<ul class="list-unstyled">
+			<?php wp_get_archives('type=monthly'); ?>
+<?php endif; ?>
+		</ul>
+		<?php get_links_list(); ?>
 	</div>
 </div><!-- /.blog-sidebar -->

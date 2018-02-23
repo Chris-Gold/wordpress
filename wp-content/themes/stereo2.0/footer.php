@@ -1,11 +1,16 @@
 </div> <!-- /.container -->
-
-      <footer class="blog-footer">
-        <p>Par <a href="http://www.wppourlesnuls.com/">WP Pour les Nuls</a>.</p>
-      </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <?php wp_footer(); ?>
+    <footer class="blog-footer">
+    <div class="row">
+      <div id="footerleft" class="text-center col-6">
+        <p>Ce template a été fait par Manue et Chris.</p>
+        <p>Maximum respect!!</p>
+        <p> Copyright &#169; <?php print(date(Y)); ?> </p>
+      </div>
+      <div class="col-6">
+      <?php get_sidebar(); ?>
+    </div>
+    </div>
+    </footer>
+<?php wp_footer(); ?>
   </body>
 </html>
