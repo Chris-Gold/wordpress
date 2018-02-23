@@ -75,6 +75,8 @@ Tags: bootstrap
   color: white; }
   #sec3 a :hover {
     color: grey; }
+#sec3 i {
+  color: white; }
 
 /* EVENEMENTS */
 #content {
